@@ -1,0 +1,7 @@
+#server con centos
+FROM centos
+
+#install apache
+RUN yum install httpd -y 
+#-y yes para todo
+CMD apachectl -DFOREGROUND
