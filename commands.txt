@@ -1,0 +1,7 @@
+--add image
+docker pull [image]:[tag]
+docker pull mongo
+docker pull mongo:latest
+--see images list
+docker images
+docker images | grep [somethig to search]
