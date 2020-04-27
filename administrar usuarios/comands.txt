@@ -1,0 +1,9 @@
+docker build -t centos:prueba .
+docker run -d -ti --name prueba centos:prueba 
+docker run -d -ti --name prueba centos:prueba 
+
+-ti terminal
+
+docker exec -ti prueba bash
+--user
+docker exec -u samuel -ti prueba bash

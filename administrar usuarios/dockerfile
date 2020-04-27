@@ -1,0 +1,10 @@
+FROM centos
+
+ENV prueba=12345
+
+RUN useradd samuel
+RUN useradd marlon
+
+USER samuel
+# usa este usuario como por defecto por que es el ultimo
+# si no hay usuario root es por defecto
