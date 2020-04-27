@@ -1,0 +1,28 @@
+docker build -t centos-test .
+docker run -dti --name centos centos-test
+
+docker exec -ti centos bash
+cd opt/
+touch file1.txt
+touch volumen/file1.txt
+
+docker run -dti --name centos centos-test
+docker exec -ti centos bash
+cd opt/
+touch file1.txt
+touch volumen/file1.txt
+
+
+docker commit centos centos-resultante
+--OJO "AVECES" SE PIERDE EL CMD POR ESO HAY QUE EJECUTARLA :"/bin/bash"
+--CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+f14626aa60cd        centos-test         -->"/bin/bash"<---         2 minutes ago       Up 2 minutes                            centos
+
+docker run -dti --name centos centos-resultante /bin/bash
+
+docker exec -ti centos bash
+cd opt/
+ls
+# Todo lo que esta dentro de un volumen no se guarda
+cd volumen
+ls

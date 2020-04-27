@@ -1,0 +1,4 @@
+FROM centos
+
+VOLUME /opt/volumen
+# Todo lo que esta dentro de un volumen no se guarda
