@@ -25,3 +25,5 @@ docker logs [name]
 docker logs project 
 --see the weight of file
 du -shc *
+--Git cache credentials seconds
+git config --global credential.helper "cache --timeout=86400"

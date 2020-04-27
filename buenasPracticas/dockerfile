@@ -1,0 +1,12 @@
+FROM nginx
+
+# RUN echo "1" > /usr/share/nginx/html/test.txt
+# RUN echo "2" > /usr/share/nginx/html/test.txt
+# RUN echo "3" > /usr/share/nginx/html/test.txt
+
+ENV dir=/usr/share/nginx/html/test.txt
+
+RUN \
+    echo "4" >> $dir && \
+    echo "5" >> $dir && \
+    echo "6" >> $dir
