@@ -1,0 +1,10 @@
+-- ver Docker Root Dir
+docker info | grep -i root
+sudo su
+--Aqui guarda todo docker
+cd /var/lib/docker
+ls
+--Aqui guarda datos de la ejecucion de docker
+vi /lib/systemd/system/docker.service
+ExecStart
+--Ver video
