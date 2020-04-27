@@ -10,8 +10,8 @@ docker pull mongo:latest
 docker images
 docker images | grep [somethig to search]
 -- create an image based on some dockerfile
-docker build --tag [name]:[tagname] [path]
-docker build --tag apache-centos:primera .
+docker build --tag [name]:[tagname] -f[path] .
+docker build --tag apache-centos:primera -f ./docker-images/project/dockerfile .
 --see image's history
 docker history -H [name]:[tagname]
 docker history -H apache-centos:latest
@@ -20,3 +20,8 @@ docker rm -fv [name]
 --Run image
 docker run [-d para que se vaya al fondo] --name[name] -p [de que puerto]:[a que puerto] [name]
 docker run -d --name apache-first -p 8080:80 apache-centos
+--see logs
+docker logs [name] 
+docker logs project 
+--see the weight of file
+du -shc *

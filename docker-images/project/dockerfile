@@ -1,0 +1,55 @@
+#server con centos
+FROM centos
+
+LABEL version="1.0"
+LABEL description="this is an apache image"
+LABEL vendor="Samuel"
+#install apache
+RUN yum install httpd -y 
+
+#Donde estamos trabajando
+WORKDIR /var/www
+
+#COPY the contain into unapp folder to /var/www/html 
+#OJO the docker run commad just use the current path becareful with 'unapp'->'./unapp'
+# por workdir no necesitamos /var/www
+# COPY unapp /var/www/html 
+COPY unapp html
+
+ENV contenido prueba
+
+# por workdir no necesitamos /var/www
+# RUN echo "${contenido}" > /var/www/html/prueba.html
+RUN echo "${contenido}" > html/prueba.html
+#ADD is most for URL is == to Copy
+# ADD unapp /var/www/html
+# EXPOSE es para puerto pero tenemos que configurar apache para que tome las carpetas de dentro como rutas
+# EXPOSE 8080
+#-y yes para todo
+
+# User por defecto es root
+# Saber quien ejecuta la tarea
+RUN echo "$(whoami)" > html/user1.html
+
+# Agregar usuario
+RUN useradd marlon
+
+# Permisos en linux
+RUN chown marlon html -R
+
+# usamos un usuario un user
+USER marlon
+
+RUN echo "$(whoami)" > html/user2.html
+
+# Cuando se muera el contenedor no se borra el bolumen
+# VOLUME /var/www/html
+
+USER root
+
+WORKDIR /
+
+COPY run.sh /run.sh
+
+# CMD apachectl -DFOREGROUND
+CMD sh /run.sh
