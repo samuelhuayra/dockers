@@ -86,3 +86,7 @@ docker exec -u root -ti app-renamed bash
 docker run -dti --name env env
 --run como sistema operativo y variable de entorno -e ""
 docker run -dti -e "prueba1=4321" --name env2 env
+
+--MySql
+yum install mysql -y centos
+apt-get install mysql-client -y
