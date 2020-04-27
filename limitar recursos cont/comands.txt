@@ -1,0 +1,15 @@
+docker run -d --name mongo mongo
+docker stats mongo
+--"500mb" "5gb"
+--help con filters
+docker run --help | grep memo
+docker run -d -m "500mb" --name mongo2 mongo
+
+--help con filters
+docker run --help | grep cp
+--cpuset-cpus string             CPUs in which to allow execution (0-3, 0,1)
+--ver cuantas cpu tenemos
+grep "model name" /proc/cpuinfo | wc -l
+--en este caso yo tengo 4
+--"0-1" le digo que use 0 y 1 dejo libre la 2 y 3
+docker run -d -m "1gb" --cpuset-cpus "0-1" --name mongo mongo

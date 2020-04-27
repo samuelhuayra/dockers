@@ -93,3 +93,7 @@ apt-get install mysql-client -y
 
 --ver estado de memoria
 docker stats
+--help con filters
+docker run --help | grep memo
+--cpu tenemos
+grep "model name" /proc/cpuinfo | wc -l
