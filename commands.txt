@@ -27,3 +27,15 @@ docker logs project
 du -shc *
 --Git cache credentials seconds
 git config --global credential.helper "cache --timeout=86400"
+--Crear certificado ssl
+openssl version -a
+openssl req -x509 -nodes -days 356 -newkey rsa:2048 -keyout [nameKey].key -out [nameCert].crt
+openssl req -x509 -nodes -days 356 -newkey rsa:2048 -keyout docker.key -out docker.crt
+
+/*Country Name (2 letter code) [AU]: 
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:localhost
+Email Address []:*/
