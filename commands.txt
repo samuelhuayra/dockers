@@ -90,3 +90,6 @@ docker run -dti -e "prueba1=4321" --name env2 env
 --MySql
 yum install mysql -y centos
 apt-get install mysql-client -y
+
+--ver estado de memoria
+docker stats

@@ -1,0 +1,4 @@
+--levantar mongo
+docker run --name mongo -d -p 2727:27017  mongo:latest
+--ver estado de memoria
+docker stats
