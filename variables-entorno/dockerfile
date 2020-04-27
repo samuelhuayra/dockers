@@ -1,0 +1,6 @@
+FROM centos
+
+ENV prueba=1234
+#  otra manera de env con -e docker run -dti -e "prueba1=4321" --name env2 env
+
+RUN useradd samuel
