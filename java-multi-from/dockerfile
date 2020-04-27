@@ -1,0 +1,13 @@
+#usaremos el primer from solo para crear el jar por eso el alias
+FROM maven:3.5-alpine as builder
+
+COPY app /app
+
+RUN cd /app && mvn package
+
+#usaremos el segundo from para crear la verdadera imagen
+FROM openjdk:8-alpine
+
+COPY --from=builder /app/target/my-app-1.0-SNAPSHOT.jar /opt/app.jar
+
+CMD java -jar /opt/app.jar
