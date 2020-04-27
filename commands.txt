@@ -39,3 +39,17 @@ Organization Name (eg, company) [Internet Widgits Pty Ltd]:
 Organizational Unit Name (eg, section) []:
 Common Name (e.g. server FQDN or YOUR name) []:localhost
 Email Address []:*/
+
+--eliminar imagen
+docker rmi name:tag name:tag name:tag
+docker rmi d36643349096
+
+--ejecutar de nombre de dockerfile
+docker build -t [name]:[tagname] -f [nombre del docker file] .
+
+--buscar imagenes flotando
+docker images -f dangling=true -q | xargs docker rmi
+ids
+docker images -f dangling=true -q 
+elimar todos esos ids
+docker images -f dangling=true -q | xargs docker rmi
