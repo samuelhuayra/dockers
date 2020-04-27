@@ -1,0 +1,29 @@
+FROM nginx
+
+RUN useradd juanc
+
+COPY personal /usr/share/nginx/html
+
+ENV archivo=docker
+
+WORKDIR /usr/share/nginx/html
+
+RUN echo "${archivo}" > env.html
+
+EXPOSE 90
+
+LABEL version="1.0.0"
+
+USER juanc
+
+RUN echo "Yo soy $(whoami)" > /tmp/yo.html
+
+USER root
+
+RUN cp /tmp/yo.html /usr/share/nginx/html/docker.html
+
+VOLUME [ "/var/log/nginx" ]
+
+# este es el comando por defecto de nginx  nginx -g 'daemon off;'
+# si queremos no le ponemos nada
+# CMD [ "nginx -g 'daemon off;'" ]
