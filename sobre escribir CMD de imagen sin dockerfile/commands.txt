@@ -3,3 +3,5 @@ docker run -dti centos [CMD]
 ej:
 docker run -dti centos:7 echo hola mundo
 docker run -dti -p 8080:8080 centos:7 python -m SimpleHTTPServer 8080
+--OJO -dti
+-dti es para centos

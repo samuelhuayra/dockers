@@ -1,0 +1,9 @@
+/** Una vez salir del bash se borrara el container
+    es mas para ver errors o algo asi **/
+
+
+docker run -dti --name centos centos:7
+docker exec -ti centos bash
+
+-- ya no -d por que es temporal y no queremos que vaya a segundo plano
+docker run --rm -ti --name centos centos:7
