@@ -1,0 +1,45 @@
+docker run -dti --network docker-test-network --name cont1 centos
+docker run -dti --network docker-test-network --name cont2 centos
+docker run -dti --network test-network --name cont3 centos
+--connect
+docker network connect docker-test-network  cont3
+docker exec cont1 bash -c "ping cont3"
+--disconnect
+docker network disconnect docker-test-network  cont3
+--entonces tiene 2 networks
+"Networks": {
+        "docker-test-network": {
+            "IPAMConfig": {},
+            "Links": null,
+            "Aliases": [
+                "b1db4988e2f7"
+            ],
+            "NetworkID": "afb6a23a7d8c44e54307f4efa05b7f11e079fa8f1e2e9c636f49290b3f9a6f18",
+            "EndpointID": "16c563847e5b159d30ad12d2cb8105663bc95b80a648b23ec637fb19b4d19d6f",
+            "Gateway": "172.124.10.1",
+            "IPAddress": "172.124.10.4",
+            "IPPrefixLen": 24,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:7c:0a:04",
+            "DriverOpts": {}
+        },
+        "test-network": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": [
+                "b1db4988e2f7"
+            ],
+            "NetworkID": "e3f5d6e972e6eb121c5a86a568228011cf5152bdfb5c99d605003a66db426ee0",
+            "EndpointID": "57d4ad9419176da330ba477bf0168f9c3a69cfed70e8019bc573204012862ecd",
+            "Gateway": "172.18.0.1",
+            "IPAddress": "172.18.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:12:00:02",
+            "DriverOpts": null
+        }
+    }
