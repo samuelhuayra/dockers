@@ -22,7 +22,7 @@ docker logs project
 --see the weight of file
 du -shc *
 --Git cache credentials seconds
-git config --global credential.helper "cache --timeout=86400"
+git config --global credential.helper "cache --timeout=172800"
 --Crear certificado ssl
 openssl version -a
 openssl req -x509 -nodes -days 356 -newkey rsa:2048 -keyout [nameKey].key -out [nameCert].crt

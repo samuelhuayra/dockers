@@ -1,0 +1,5 @@
+docker run -dti --network docker-test-network --name cont1 centos
+docker run -dti --network docker-test-network --name cont2 centos
+
+docker exec cont1 bash -c "ping 172.124.10.3"
+docker exec cont2 bash -c "ping cont1"
