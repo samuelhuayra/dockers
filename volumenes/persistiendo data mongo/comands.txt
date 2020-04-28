@@ -1,0 +1,3 @@
+--mongo no funciona con nombre solo carpeta fisica
+docker volume create myvolume
+docker run -d -p 27017:27017 --name mongo -v myvolume:/data/db mongo
