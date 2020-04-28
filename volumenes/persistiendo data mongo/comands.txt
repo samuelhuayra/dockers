@@ -1,3 +1,5 @@
 --mongo no funciona con nombre solo carpeta fisica
-docker volume create myvolume
-docker run -d -p 27017:27017 --name mongo -v myvolume:/data/db mongo
+docker volume create myvolume --not works
+docker run -d -p 27017:27017 --name mongo -v myvolume:/data/db mongo--not works
+
+docker run -d -p 27017:27017 --name mongo -v /opt/test:/data/db mongo
