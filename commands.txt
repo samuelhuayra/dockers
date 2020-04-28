@@ -97,3 +97,5 @@ docker stats
 docker run --help | grep memo
 --cpu tenemos
 grep "model name" /proc/cpuinfo | wc -l
+--eliminar dangling volumes
+docker volume ls -f dangling=true -q | xargs docker volume rm
