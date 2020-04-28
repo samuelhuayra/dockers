@@ -1,0 +1,14 @@
+cd /opt/
+mkdir mysql-volumen
+-- -v (mypath):[containerPath]
+docker run -d --name db -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=12345678" -v /opt/mysql-volumen/:/var/lib/mysql mysql
+
+mysql -u root -h 127.0.0.1 -p12345678
+show databases;
+create database test;
+
+docker rm -fv db
+
+docker run -d --name db -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=12345678" -v /opt/mysql-volumen/:/var/lib/mysql mysql
+mysql -u root -h 127.0.0.1 -p12345678
+show databases;
