@@ -1,0 +1,7 @@
+--crear red con driver brige
+docker network create test-network
+--subnet para para asignar ips 
+docker network create -d bridge  --subnet 172.124.10.0/24 --gateway 172.124.10.1 docker-test-network
+docker network ls | grep test
+docker network inspect docker-test-network
+docker run --network docker-test-network -d --name test3 -ti centos

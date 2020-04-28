@@ -1,0 +1,8 @@
+--ver la red Gateway
+ip a | grep docker
+--ver redes de docker
+docker network ls
+--dridge es por defecto
+docker network ls| grep bridge
+--inspeccionar red
+docker network inspect bridge 
