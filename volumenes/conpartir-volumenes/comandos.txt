@@ -1,0 +1,10 @@
+OJO cuidado con las carpetas con espacios para %(pwd)
+docker build -t generador .
+--docker ruta actual $(pwd)
+docker run -d -v $(pwd)/common:/opt --name gen generador
+--imprimira la hora cada 10 seg
+--creamos otra container a la misma -v
+
+--creamos un server nginx
+--y como comparten el folder el html se actualiza cada 10 seg
+docker run -d --name nginx -v $(pwd)/common:/usr/share/nginx/html -p 80:80 nginx
