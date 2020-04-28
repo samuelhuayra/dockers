@@ -1,0 +1,11 @@
+ --no le damos nuestra carpeta entonces la crea en  Docker Root Dir volumenes
+ docker run -d --name db -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=12345678" -v /var/lib/mysql mysql
+ docker info | grep -i root
+ se guarda en 
+--Docker Root Dir: /var/lib/docker
+cd volumes/
+4ca3be9845c7d46c390024ae8cd7eb3225815fd58b1cc8e6c9efca841d08f2f0  metadata.db
+--fv es para borrar volumen tambien
+docker rm -fv db
+--f es solo para el container
+docker rm -f db
