@@ -1,0 +1,19 @@
+--see volumens
+docker volume ls
+
+docker build -t test-vol .
+docker run -dti --name test test-vol
+
+docker volume ls
+docker exec -ti test bash
+cd /myvol/
+touch file.txt
+touch file2.txt
+exit 
+
+docker rm -f test
+
+--docker info | grep -i root->Docker Root Dir: /var/lib/docker
+cd volumes/
+cd 41ca33a6aea607285459119a9ad9720f3d394ca17d880157cdd61b5a12dcba35/
+cd _data/
