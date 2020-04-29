@@ -1,0 +1,9 @@
+# 1
+version: '2' # OJO mem_limit y cpuset solo en v2 funciona
+# 2
+services: 
+    web:
+        container_name: nginx
+        image: nginx
+        mem_limit: 20m
+        cpuset: "0"
