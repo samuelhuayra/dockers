@@ -1,0 +1,32 @@
+Actualización del sistema:
+sudo apt update
+sudo apt upgrade
+
+Instalación por completo del idioma:
+
+Instalación de codecs multimedia:
+sudo apt install ubuntu-restricted-extras
+
+Instalación de software de compresión de archivos
+sudo apt-get install rar unace p7zip p7zip-full p7zip-rar unrar lzip lhasa arj sharutils mpack lzma lzop cabextract
+
+instalación de Gnome Tweak tool:
+sudo apt install gnome-tweak-tool
+
+instalación de chromium browser
+sudo apt install chromium-browser
+
+Instalación de chrome desde la página oficial
+
+instalación de reproductores de audio y vídeo:
+sudo apt install vlc
+sudo apt install audacious
+
+Instalación de un visor pdf:
+Foxit reader pdf
+
+--memoria
+sudo apt install gnome-system-monitor
+--desinstalar Alt
+sudo apt-get install dconf-tools
+sudo apt-get install unity-control-center

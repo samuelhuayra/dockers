@@ -1,0 +1,4 @@
+.themes
+https://www.gnome-look.org/p/1241688/
+.icons
+https://www.gnome-look.org/p/1102582
