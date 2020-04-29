@@ -1,0 +1,7 @@
+-- -d es driver
+docker network create --subnet 172.128.10.0/24 --gateway 172.128.10.1 -d bridge my-net
+docker run --network my-net -dti --name nginx centos
+
+docker run --network my-net --ip 172.128.10.50 -dti --name nginx2 centos
+--
+                    "IPAddress": "172.128.10.50",
