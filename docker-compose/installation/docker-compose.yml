@@ -1,0 +1,12 @@
+# 1
+version: '3.8'
+# 2
+services: 
+    web:
+        container_name: nginx1
+        ports: 
+            - '8080:80'
+        image: nginx
+# 3 OPTIONAL
+
+# 4 OPTIONAL
