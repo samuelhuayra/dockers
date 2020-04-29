@@ -1,0 +1,10 @@
+docker-compose build
+--restart: always -- Siempre se reiniciara
+watch -d docker ps
+docker logs test 
+--restart: unless-stopped -- Siempre se reiniciara a menos que lo detengamos a mano
+watch -d docker ps
+docker logs test 
+--restart: on-failure -- se reinicia cuando hay errores
+watch -d docker ps
+docker logs test 

@@ -1,0 +1,12 @@
+# 1
+version: '3.8'
+# 2
+services: 
+    test:
+        container_name: test
+        image: restart-image #docker-compose up -d
+        build: . #build es solo para luego no afecta docker-compose build
+        # restart: no #defecto
+        # restart: always
+        # restart: unless-stopped
+        restart: on-failure
