@@ -11,5 +11,6 @@ services:
             - 'vol2:/usr/share/nginx/html'
 # 3 OPTIONAL
 volumes: 
+    # crear vol2
     vol2:
 # 4 OPTIONAL
