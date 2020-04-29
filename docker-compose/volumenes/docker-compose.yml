@@ -1,0 +1,15 @@
+# 1
+version: '3.8'
+# 2
+services: 
+    web:
+        image: nginx
+        container_name: nginx1
+        ports: 
+            - '8080:80'
+        volumes: 
+            - 'vol2:/usr/share/nginx/html'
+# 3 OPTIONAL
+volumes: 
+    vol2:
+# 4 OPTIONAL
