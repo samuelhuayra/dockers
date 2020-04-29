@@ -1,0 +1,10 @@
+docker-compose build
+# 1
+version: '3.8'
+# 2
+services: 
+    web:
+        container_name: web
+        image: webtest
+        build: . #--busca dockerfile
+con nombre
