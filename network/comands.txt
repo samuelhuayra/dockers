@@ -6,3 +6,7 @@ docker network ls
 docker network ls| grep bridge
 --inspeccionar red
 docker network inspect bridge 
+--eliminar
+--OJO primero los network
+--o desconectamos la red
+docker network rm docker-test-network 
