@@ -1,0 +1,2 @@
+--para contenedores que no tengan red ==
+docker run --network none -dti --name tst3 centos
