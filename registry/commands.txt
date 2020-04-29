@@ -1,0 +1,18 @@
+--registry es para guardar imagenes como github
+--crear registry
+docker run -d -p 5000:5000 -v $PWD/data:/var/lib/registry --name registry registry
+
+--Taggear la imagen localhost->ip para compartir
+docker tag hello-world:latest localhost:500/hello-world:latest
+docker tag [imagenname:tag] localhost:500/[name:tag]
+
+--ver imagen taggeada
+docker images
+-->localhost:500/hello-world   latest              bf756fb1ae65        3 months ago        13.3kB
+--Guardar imagen en registry
+docker push localhost:500/hello-world
+--bajarlo de registry
+docker pull localhost:500/hello-world
+
+--ver ip
+ip a
